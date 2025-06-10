@@ -1,6 +1,9 @@
-﻿namespace Presentation.Services;
+﻿using System.Globalization;
+using Presentation;
 
-public class CalendarService
+namespace Presentation.Services;
+
+public class CalendarService : Calend
 {
 
 

@@ -1,16 +1,17 @@
-﻿syntax = "proto3";"
+﻿syntax = "proto3";
 
 option csharp_namespace = "Presentation";
 
 package calendar;
 
-service Calendar {
+service CalendarHandler {
 	rpc GetEvents (GetEventsRequest) returns (GetEventsResponse);
 	rpc CreateEvent (CreateEventRequest) returns (CreateEventResponse);
 	rpc UpdateEventStatus (UpdateEventStatusRequest) returns (UpdateEventStatusResponse);
+
 }
 
-message GetEventRequest {
+message GetEventsRequest {
 	string event_id = 1;
 }
 
@@ -18,7 +19,7 @@ message GetEventsResponse {
 	repeated Event events = 1;
 }
 
-message CreateEventsRequest {
+message CreateEventRequest {
 	string name = 1;
 	string description = 2;
 	string date = 3;
@@ -53,6 +54,6 @@ message Event {
 enum EventStatus {
   UNKNOWN = 0;
   FULL = 1;
-  AVAILABLE = 1;
-  BOOKED = 2;
+  AVAILABLE = 2;
+  BOOKED = 3;
 }
